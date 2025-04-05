@@ -408,7 +408,7 @@ GameObject:
   - component: {fileID: 880376495}
   - component: {fileID: 880376494}
   m_Layer: 5
-  m_Name: ResetFoodButton (1)
+  m_Name: ResetFoodButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
