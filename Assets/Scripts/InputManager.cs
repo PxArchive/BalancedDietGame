@@ -13,6 +13,13 @@ public class InputManager : MonoBehaviour
     public float plateAcceleration = 5f;
     Vector3 prevVelocity;
 
+    [SerializeField] float mouseSensitivity = 1f;
+
+    [SerializeField] float horizontalClamp = 20f;
+    [SerializeField] float verticalClamp = 20f;
+
+    Vector2 mousePos2D = Vector2.zero;
+
     //public float minRoll = -70f;
     //public float maxRoll = 120f;
     //public float rollSmoothTime = 0.5f;
@@ -31,6 +38,8 @@ public class InputManager : MonoBehaviour
         {
             Debug.LogError("You forgot to assign the plate object on the input manager script.");
         }
+
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void OnPrimaryInput()
@@ -41,21 +50,34 @@ public class InputManager : MonoBehaviour
     public void OnMoveMouse(InputValue _input)
     {
         //Vector2 screenPos = _input.Get<Vector2>();
-        mousePos = Mouse.current.position.ReadValue(); // Positions depend on resolution btw
+        Vector2 mouseDelta = Mouse.current.delta.value;
+        //Vector2 mousePos2D = Mouse.current.position.ReadValue(); // Positions depend on resolution btw
+        mousePos2D += mouseDelta;
         float w = Screen.width;
         float h = Screen.height;
+        Vector2 screenCenter = new Vector2(w, h) / 2;
+        mousePos = (mousePos2D - screenCenter) * mouseSensitivity + screenCenter;
 
         // Clamp to be within screen bounds
-        mousePos.x = Mathf.Clamp(mousePos.x, 0f, w);
-        mousePos.y = Mathf.Clamp(h - mousePos.y, 0f, h);
-
-        // Convert to screen space between 0 and 1
-        mousePos = new Vector3(mousePos.x / w, mousePos.y / h, 0f);
+        //mousePos.x = Mathf.Clamp(mousePos.x, 0f, w);
+        mousePos.y = /*h - mousePos.y;*/  Mathf.Clamp(h - mousePos.y, 0f, h);
 
         float castDistance = 5f;
-        ray = Camera.main.ViewportPointToRay(mousePos);
+        // Convert to screen space between 0 and 1
+        //mousePos = new Vector3(mousePos.x, 0f/*mousePos.y*/, .5f); 
+        mousePos = new Vector3(mousePos.x / w, mousePos.y / h, 5f);
+
+        mousePosInScene = Camera.main.ViewportToWorldPoint(mousePos);
+        //ray = Camera.main.ViewportPointToRay(mousePos);
         //ray = Camera.main.ScreenPointToRay(mousePos);
-        mousePosInScene = ray.GetPoint(castDistance);
+        //mousePosInScene = ray.GetPoint(castDistance);
+        Vector3 OffsetWS = mousePosInScene - Camera.main.transform.position;
+        OffsetWS.y = Mathf.Clamp(OffsetWS.y, -verticalClamp, verticalClamp);
+        mousePosInScene = Camera.main.transform.position + OffsetWS;
+
+        Vector3 offsetCamSpace = Camera.main.transform.InverseTransformPoint(mousePosInScene);
+        offsetCamSpace.x = Mathf.Clamp(offsetCamSpace.x, -horizontalClamp, horizontalClamp);
+        mousePosInScene = Camera.main.transform.TransformPoint(offsetCamSpace);
         //cursorObject.transform.position = Vector3.SmoothDamp(cursorObject.transform.position, mousePosInScene, ref mouseVelocity, smoothTime);
     }
 

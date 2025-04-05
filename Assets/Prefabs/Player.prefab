@@ -61,6 +61,8 @@ MonoBehaviour:
   plateObject: {fileID: 8800749287023299499}
   plateSpeed: 5
   plateAcceleration: 5
+  horizontalClamp: 1
+  verticalClamp: 2
 --- !u!114 &8659649913084272794
 MonoBehaviour:
   m_ObjectHideFlags: 0
