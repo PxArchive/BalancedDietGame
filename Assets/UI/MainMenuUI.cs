@@ -3,10 +3,13 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuUI : MonoBehaviour
 {
+    public int defaultNumFood = 1;
+    private int numFood;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        numFood = defaultNumFood;
     }
 
     // Update is called once per frame
@@ -24,13 +27,13 @@ public class MainMenuUI : MonoBehaviour
     public void TakeMoreFood()
     {
         Debug.Log("Took one more");
-        //TODO adding food to tray
+        numFood++;
     }
 
     public void ResetFood()
     {
         Debug.Log("Reset");
-        //TODO reset
+        numFood = defaultNumFood;
     }
     
     public void QuitGame()
