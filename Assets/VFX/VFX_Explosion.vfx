@@ -41,7 +41,7 @@ MonoBehaviour:
   stickyNoteInfos: []
   categories:
   - name: ParticleSetup
-    collapsed: 0
+    collapsed: 1
   - name: Collision
     collapsed: 1
   - name: Dust
@@ -114,6 +114,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615763}
   - {fileID: 8926484042661615765}
   - {fileID: 8926484042661615767}
+  - {fileID: 8926484042661615770}
   m_UIPosition: {x: 0, y: 0}
   m_UICollapsed: 1
   m_UISuperCollapsed: 0
@@ -122,6 +123,22 @@ MonoBehaviour:
   - {fileID: 8926484042661615547}
   - {fileID: 8926484042661615695}
   m_ParameterInfo:
+  - name: ParticleCount
+    path: ParticleCount
+    tooltip: 
+    space: -1
+    spaceable: 0
+    sheetType: m_Int
+    realType: Int32
+    defaultValue:
+      m_Type:
+        m_SerializableType: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      m_SerializableObject: 128
+    min: -Infinity
+    max: Infinity
+    enumValues: []
+    descendantCount: 0
   - name: ParticleSetup
     path: 
     tooltip: 
@@ -659,6 +676,7 @@ MonoBehaviour:
   m_UISuperCollapsed: 0
   m_InputSlots:
   - {fileID: 8926484042661614879}
+  - {fileID: 8926484042661615769}
   m_OutputSlots: []
   m_Label: Spawn system
   m_Data: {fileID: 8926484042661614702}
@@ -670,7 +688,7 @@ MonoBehaviour:
     - context: {fileID: 8926484042661614707}
       slotIndex: 0
   loopDuration: 1
-  loopCount: 0
+  loopCount: 1
   delayBeforeLoop: 0
   delayAfterLoop: 0
 --- !u!114 &8926484042661614702
@@ -754,7 +772,8 @@ MonoBehaviour:
       m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
   m_Direction: 0
-  m_LinkedSlots: []
+  m_LinkedSlots:
+  - {fileID: 8926484042661615771}
 --- !u!114 &8926484042661614705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1091,7 +1110,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 2
+      m_SerializableObject: 4
     m_Space: -1
   m_Property:
     name: LoopDuration
@@ -3745,7 +3764,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615073}
   m_ExposedName: SpriteSize
   m_Exposed: 1
-  m_Order: 4
+  m_Order: 8
   m_Category: ParticleSetup
   m_Min:
     m_Type:
@@ -4329,7 +4348,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615090}
   m_ExposedName: Speed
   m_Exposed: 1
-  m_Order: 5
+  m_Order: 10
   m_Category: ParticleSetup
   m_Min:
     m_Type:
@@ -4413,7 +4432,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615092}
   m_ExposedName: SpeedVariation
   m_Exposed: 1
-  m_Order: 6
+  m_Order: 12
   m_Category: ParticleSetup
   m_Min:
     m_Type:
@@ -6960,7 +6979,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615256}
   m_ExposedName: CollisionBounce
   m_Exposed: 1
-  m_Order: 7
+  m_Order: 13
   m_Category: Collision
   m_Min:
     m_Type:
@@ -7068,7 +7087,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615258}
   m_ExposedName: CollisionFriction
   m_Exposed: 1
-  m_Order: 8
+  m_Order: 14
   m_Category: Collision
   m_Min:
     m_Type:
@@ -7176,7 +7195,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615260}
   m_ExposedName: CollisionSpread
   m_Exposed: 1
-  m_Order: 9
+  m_Order: 15
   m_Category: Collision
   m_Min:
     m_Type:
@@ -7286,7 +7305,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615272}
   m_ExposedName: Plane1
   m_Exposed: 1
-  m_Order: 10
+  m_Order: 16
   m_Category: Collision
   m_Min:
     m_Type:
@@ -7639,7 +7658,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615282}
   m_ExposedName: Plane2
   m_Exposed: 1
-  m_Order: 1
+  m_Order: 2
   m_Category: Collision
   m_Min:
     m_Type:
@@ -7992,7 +8011,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615292}
   m_ExposedName: Plane3
   m_Exposed: 1
-  m_Order: 2
+  m_Order: 4
   m_Category: Collision
   m_Min:
     m_Type:
@@ -8345,7 +8364,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615302}
   m_ExposedName: Plane4
   m_Exposed: 1
-  m_Order: 3
+  m_Order: 6
   m_Category: Collision
   m_Min:
     m_Type:
@@ -11254,7 +11273,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615531}
   m_ExposedName: DustScale
   m_Exposed: 1
-  m_Order: 11
+  m_Order: 17
   m_Category: Dust
   m_Min:
     m_Type:
@@ -11335,7 +11354,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615533}
   m_ExposedName: DustTexture
   m_Exposed: 1
-  m_Order: 12
+  m_Order: 18
   m_Category: Dust
   m_Min:
     m_Type:
@@ -13139,7 +13158,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615712}
   m_ExposedName: MeshProbability
   m_Exposed: 1
-  m_Order: 0
+  m_Order: 1
   m_Category: Mesh
   m_Min:
     m_Type:
@@ -13911,7 +13930,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615743}
   m_ExposedName: Mesh
   m_Exposed: 1
-  m_Order: 4
+  m_Order: 9
   m_Category: Mesh
   m_Min:
     m_Type:
@@ -14191,7 +14210,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615762}
   m_ExposedName: New Texture 2D
   m_Exposed: 1
-  m_Order: 5
+  m_Order: 11
   m_Category: Mesh
   m_Min:
     m_Type:
@@ -14263,7 +14282,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615764}
   m_ExposedName: MeshAlbedo
   m_Exposed: 1
-  m_Order: 2
+  m_Order: 5
   m_Category: Mesh
   m_Min:
     m_Type:
@@ -14344,7 +14363,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615766}
   m_ExposedName: MeshRoughness
   m_Exposed: 1
-  m_Order: 3
+  m_Order: 7
   m_Category: Mesh
   m_Min:
     m_Type:
@@ -14418,7 +14437,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615768}
   m_ExposedName: MeshMetallic
   m_Exposed: 1
-  m_Order: 1
+  m_Order: 3
   m_Category: Mesh
   m_Min:
     m_Type:
@@ -14469,3 +14488,118 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
   m_Direction: 1
   m_LinkedSlots: []
+--- !u!114 &8926484042661615769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d246e354feb93041a837a9ef59437cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UIIgnoredErrors: []
+  m_Parent: {fileID: 0}
+  m_Children: []
+  m_UIPosition: {x: 0, y: 0}
+  m_UICollapsed: 1
+  m_UISuperCollapsed: 0
+  m_MasterSlot: {fileID: 8926484042661615769}
+  m_MasterData:
+    m_Owner: {fileID: 8926484042661614700}
+    m_Value:
+      m_Type:
+        m_SerializableType: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      m_SerializableObject: 1
+    m_Space: -1
+  m_Property:
+    name: LoopCount
+    m_serializedType:
+      m_SerializableType: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+  m_Direction: 0
+  m_LinkedSlots: []
+--- !u!114 &8926484042661615770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 330e0fca1717dde4aaa144f48232aa64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UIIgnoredErrors: []
+  m_Parent: {fileID: 114350483966674976}
+  m_Children: []
+  m_UIPosition: {x: 0, y: 0}
+  m_UICollapsed: 1
+  m_UISuperCollapsed: 0
+  m_InputSlots: []
+  m_OutputSlots:
+  - {fileID: 8926484042661615771}
+  m_ExposedName: ParticleCount
+  m_Exposed: 1
+  m_Order: 19
+  m_Category: 
+  m_Min:
+    m_Type:
+      m_SerializableType: 
+    m_SerializableObject: 
+  m_Max:
+    m_Type:
+      m_SerializableType: 
+    m_SerializableObject: 
+  m_IsOutput: 0
+  m_EnumValues: []
+  m_ValueFilter: 0
+  m_Tooltip: 
+  m_Nodes:
+  - m_Id: 0
+    linkedSlots:
+    - outputSlot: {fileID: 8926484042661615771}
+      inputSlot: {fileID: 8926484042661614704}
+    position: {x: 41.600002, y: 559.2}
+    expandedSlots: []
+    expanded: 1
+    supecollapsed: 0
+--- !u!114 &8926484042661615771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d246e354feb93041a837a9ef59437cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UIIgnoredErrors: []
+  m_Parent: {fileID: 0}
+  m_Children: []
+  m_UIPosition: {x: 0, y: 0}
+  m_UICollapsed: 1
+  m_UISuperCollapsed: 0
+  m_MasterSlot: {fileID: 8926484042661615771}
+  m_MasterData:
+    m_Owner: {fileID: 8926484042661615770}
+    m_Value:
+      m_Type:
+        m_SerializableType: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089
+      m_SerializableObject: 128
+    m_Space: -1
+  m_Property:
+    name: o
+    m_serializedType:
+      m_SerializableType: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+  m_Direction: 1
+  m_LinkedSlots:
+  - {fileID: 8926484042661614704}
