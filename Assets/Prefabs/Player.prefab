@@ -61,8 +61,11 @@ MonoBehaviour:
   plateObject: {fileID: 8800749287023299499}
   plateSpeed: 5
   plateAcceleration: 5
-  horizontalClamp: 1
-  verticalClamp: 2
+  maxMouseVelocity: 5000
+  screenDistance: 5
+  horizontalClamp: 0.3
+  verticalClamp: 0.4
+  verticalCenter: 0.4
 --- !u!114 &8659649913084272794
 MonoBehaviour:
   m_ObjectHideFlags: 0
