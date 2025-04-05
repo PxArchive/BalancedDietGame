@@ -8,7 +8,7 @@ public class PlayerWalk : MonoBehaviour
     public float stepTime = 1.0f;
     public AnimationCurve curve;
     
-    bool isWalking = false;
+    public bool isWalking = false;
     Vector3 startPoint; 
     Vector3 targetPoint;
     float time;
@@ -24,7 +24,7 @@ public class PlayerWalk : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && !isWalking)
         {
-            Debug.Log("Step");
+            //Debug.Log("Step");
             isWalking = true;
             time = 0;
             startPoint = gameObject.transform.position;
@@ -39,6 +39,4 @@ public class PlayerWalk : MonoBehaviour
             isWalking = time < stepTime;
         }
     }
-    
-    
 }

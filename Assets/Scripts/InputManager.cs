@@ -20,25 +20,29 @@ public class InputManager : MonoBehaviour
     [SerializeField] float verticalCenter = .6f;
 
     Vector2 mousePos2D = Vector2.zero;
+    PlayerWalk walker;
 
 
     void Start()
     {
         cursorObject = GameObject.Find("CursorObject");
-
+        walker = FindFirstObjectByType<PlayerWalk>();
         if (plateObject == null)
         {
             Debug.LogError("You forgot to assign the plate object on the input manager script.");
         }
 
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     public void Update()
     {
+
         // Update mouse position
         Vector2 mouseDelta = Vector2.ClampMagnitude(Mouse.current.delta.value * mouseVelocityScale, maxMouseVelocity * Time.deltaTime);
         mousePos2D += mouseDelta * .001f;
+
 
         float w = Screen.width;
         float h = Screen.height;
@@ -49,14 +53,22 @@ public class InputManager : MonoBehaviour
 
         // Normalize view coordinates
 
+
         Vector2 screenPosition = new Vector2(mousePos2D.x, mousePos2D.y);
 
         // Invert y coordinate
         screenPosition.y = 1 - screenPosition.y;
+        screenPosition.x = 1 - screenPosition.x;
 
         // Project cursor position into world space
         Vector3 mousePosVS = new Vector3(screenPosition.x, screenPosition.y, screenDistance);
         mousePosInScene = Camera.main.ViewportToWorldPoint(mousePosVS);
+    }
+
+    public void OnReset()
+    {
+        Debug.Log("RESET");
+        FindFirstObjectByType<Foods>().ResetPosition();
     }
 
     private void FixedUpdate()
@@ -65,13 +77,16 @@ public class InputManager : MonoBehaviour
         Vector3 targetPos = mousePosInScene;
         Vector3 tmpTarget = Vector3.Lerp(currentPos, targetPos, Mathf.Clamp01(plateSpeed * Time.fixedDeltaTime));
         Vector3 tmpVelocity = (tmpTarget - currentPos) / Time.fixedDeltaTime;
-
-        prevVelocity = Vector3.Lerp(prevVelocity, tmpVelocity, Mathf.Clamp01(plateAcceleration * Time.fixedDeltaTime));
+        if (!walker.isWalking)
+        {
+            prevVelocity = Vector3.Lerp(prevVelocity, tmpVelocity, Mathf.Clamp01(plateAcceleration * Time.fixedDeltaTime));
+        }
 
         currentPos += prevVelocity * Time.fixedDeltaTime;
 
         cursorObject.transform.position = currentPos;
 
+        
         plateObject.transform.rotation = Quaternion.Euler(90f, 0f, 0f) * Quaternion.LookRotation(cursorObject.transform.position - plateObject.transform.position, Vector3.up);
     }
 }
