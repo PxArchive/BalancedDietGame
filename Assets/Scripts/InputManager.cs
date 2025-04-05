@@ -47,7 +47,7 @@ public class InputManager : MonoBehaviour
 
         // Clamp to be within screen bounds
         mousePos.x = Mathf.Clamp(mousePos.x, 0f, w);
-        mousePos.y = Mathf.Clamp(mousePos.y, 0f, h);
+        mousePos.y = Mathf.Clamp(h - mousePos.y, 0f, h);
 
         // Convert to screen space between 0 and 1
         mousePos = new Vector3(mousePos.x / w, mousePos.y / h, 0f);
@@ -77,8 +77,10 @@ public class InputManager : MonoBehaviour
         cursorObject.transform.position = Vector3.SmoothDamp(cursorObject.transform.position, mousePosInScene, ref mouseVelocity, smoothTime);
         */
         
-        plateObject.transform.LookAt(cursorObject.transform.position);
-        plateObject.transform.localRotation *= Quaternion.Euler(90f, 0f, 0f);
+        //plateObject.transform.LookAt(cursorObject.transform.position);
+        plateObject.transform.rotation = Quaternion.Euler(90f, 0f, 0f) * Quaternion.LookRotation(cursorObject.transform.position - plateObject.transform.position, Vector3.up);
+        //plateObject.transform.rotation *= Quaternion.AngleAxis(90f, plateObject.transform.right);
+        //plateObject.transform.localRotation *= Quaternion.Euler(90f, 0f, 0f);
 
         //Quaternion targetRotation = new Quaternion();
         //float targetRoll = Mathf.Lerp(minRoll, maxRoll, mousePos.y);
