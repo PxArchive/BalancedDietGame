@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenuUI : MonoBehaviour
 {
@@ -16,8 +17,8 @@ public class MainMenuUI : MonoBehaviour
 
     public void StartGame()
     {
-        Debug.Log("Starting game is not supported yet!");
-        //TODO start game
+        Debug.Log("Starting game");
+        SceneManager.LoadScene(1);
     }
     
     public void TakeMoreFood()
