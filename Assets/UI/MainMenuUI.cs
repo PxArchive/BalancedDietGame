@@ -17,6 +17,19 @@ public class MainMenuUI : MonoBehaviour
     public void StartGame()
     {
         Debug.Log("Starting game is not supported yet!");
+        //TODO start game
+    }
+    
+    public void TakeMoreFood()
+    {
+        Debug.Log("Took one more");
+        //TODO adding food to tray
+    }
+
+    public void ResetFood()
+    {
+        Debug.Log("Reset");
+        //TODO reset
     }
     
     public void QuitGame()
