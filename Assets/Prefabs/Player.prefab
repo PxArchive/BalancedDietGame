@@ -48,7 +48,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7077455b22246e8499aeb6ac5bedf3b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foods: []
+  foods:
+  - {fileID: 8168712869651979066, guid: b79562c8b47b832489ceb1a595f4daff, type: 3}
+  - {fileID: 8142061393702369252, guid: 269ff7c1e3d9bd745b1bd21ea2aee737, type: 3}
+  - {fileID: 7403463873729720078, guid: 2f9b6bd5a078a4341b41d2a4668d25ce, type: 3}
+  - {fileID: 3943498351038070442, guid: 10c5486ef109ffa43a6a87acaf5e5da6, type: 3}
+  - {fileID: 505890530906459578, guid: 708be0870ca0a6f4f80e6d8c80e0eb0f, type: 3}
+  - {fileID: 4444533187144340153, guid: e6e6b2489aace8d4987751c83277043d, type: 3}
+  numItemsToSpawn: 4
+  spawnZOffset: 1
+  spawnSafetyThreshold: 0.2
 --- !u!1 &1679227144180827532
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,6 +241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bedb61359fd7f546a69cdcb0fc31f46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alreadyFailed: 0
 --- !u!114 &6252990052269238233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -573,7 +583,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stepSize: 0.5
   stepTime: 0.5
-  shakeDelay: 0.5
+  shakeDelayFactor: 1
   curve:
     serializedVersion: 2
     m_Curve:
