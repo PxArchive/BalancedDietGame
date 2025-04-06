@@ -21,6 +21,8 @@ public class ExplodeOnCollision : MonoBehaviour
             || collision.collider.gameObject.CompareTag("FoodObject")))
         {
             OnTriggerDestruction();
+            Debug.Log(collision.collider.gameObject.tag);
+            Debug.Log(collision.collider.gameObject.name);
         }
     }
 
