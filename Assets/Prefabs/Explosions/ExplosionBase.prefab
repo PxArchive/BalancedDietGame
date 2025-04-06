@@ -61,11 +61,17 @@ VisualEffect:
       - m_Value: 1
         m_Name: SpriteSize
         m_Overridden: 1
-      - m_Value: 20
+      - m_Value: 4
         m_Name: Speed
         m_Overridden: 1
       - m_Value: 3
         m_Name: DustScale
+        m_Overridden: 1
+      - m_Value: 1
+        m_Name: SpeedVariation
+        m_Overridden: 1
+      - m_Value: 0.2
+        m_Name: CollisionFriction
         m_Overridden: 1
     m_Vector2f:
       m_Array: []
@@ -88,7 +94,10 @@ VisualEffect:
     m_Uint:
       m_Array: []
     m_Int:
-      m_Array: []
+      m_Array:
+      - m_Value: 64
+        m_Name: ParticleCount
+        m_Overridden: 1
     m_Matrix4x4f:
       m_Array: []
     m_AnimationCurve:
