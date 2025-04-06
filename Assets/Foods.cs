@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
@@ -24,6 +25,13 @@ public class Foods : MonoBehaviour
                 foods.Add(transform.GetChild(i).gameObject);
             }
         }*/
+
+        StartCoroutine(SpawnFoodDeferred());
+    }
+
+    IEnumerator SpawnFoodDeferred()
+    {
+        yield return new WaitForSeconds(1f);
 
         tray = FindFirstObjectByType<TrayMoveForward>();
 

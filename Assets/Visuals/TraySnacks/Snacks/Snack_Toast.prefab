@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 117327739380427025}
   m_Layer: 0
   m_Name: Snack_Toast
-  m_TagString: Untagged
+  m_TagString: FoodObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 8667314969683747159}
   m_Layer: 0
   m_Name: ngj2025_Toast
-  m_TagString: Untagged
+  m_TagString: FoodObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
