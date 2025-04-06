@@ -61,10 +61,28 @@ VisualEffect:
       - m_Value: 1
         m_Name: SpriteSize
         m_Overridden: 1
+      - m_Value: 20
+        m_Name: Speed
+        m_Overridden: 1
+      - m_Value: 3
+        m_Name: DustScale
+        m_Overridden: 1
     m_Vector2f:
       m_Array: []
     m_Vector3f:
-      m_Array: []
+      m_Array:
+      - m_Value: {x: 0.93, y: 3.52, z: 5.32}
+        m_Name: Plane2_position
+        m_Overridden: 1
+      - m_Value: {x: -1.24, y: 1.5967377, z: 5.32}
+        m_Name: Plane3_position
+        m_Overridden: 1
+      - m_Value: {x: 0.93, y: 1.5967377, z: 5.32}
+        m_Name: Plane4_position
+        m_Overridden: 1
+      - m_Value: {x: 0.93, y: 0.05, z: 5.32}
+        m_Name: Plane1_position
+        m_Overridden: 1
     m_Vector4f:
       m_Array: []
     m_Uint:
@@ -84,6 +102,9 @@ VisualEffect:
         m_Overridden: 1
       - m_Value: {fileID: 2800000, guid: 99a442d38f499c743a00b7c10e7b815a, type: 3}
         m_Name: MeshAlbedo
+        m_Overridden: 1
+      - m_Value: {fileID: 2800000, guid: 1d8481de16af723418a688958c41224b, type: 3}
+        m_Name: DustTexture
         m_Overridden: 1
     m_Bool:
       m_Array: []
