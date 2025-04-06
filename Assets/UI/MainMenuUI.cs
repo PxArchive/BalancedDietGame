@@ -10,6 +10,8 @@ public class MainMenuUI : MonoBehaviour
     void Start()
     {
         numFood = defaultNumFood;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     // Update is called once per frame
@@ -21,7 +23,7 @@ public class MainMenuUI : MonoBehaviour
     public void StartGame()
     {
         Debug.Log("Starting game");
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
     
     public void TakeMoreFood()
@@ -40,5 +42,11 @@ public class MainMenuUI : MonoBehaviour
     {
         Debug.Log("Quit");
         Application.Quit();
+    }
+
+    public void ToMainMenu()
+    {
+        Debug.Log("Back to main menu");
+        SceneManager.LoadScene(1);
     }
 }

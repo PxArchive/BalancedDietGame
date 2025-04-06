@@ -6,6 +6,14 @@ public class ExplodeOnCollision : MonoBehaviour
 {
     [SerializeField] GameObject ParticleExplosion;
     public UnityEvent OnDestruction;
+    PlayerWalk walker;
+    Rigidbody rb;
+
+    private void Start()
+    {
+        walker = FindFirstObjectByType<PlayerWalk>();
+        rb = GetComponent<Rigidbody>();
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -15,13 +23,28 @@ public class ExplodeOnCollision : MonoBehaviour
             OnTriggerDestruction();
         }
     }
-    
+
+    private void Update()
+    {
+        if (walker.isWalking)
+        {
+            rb.useGravity = false;
+        }
+        else
+        {
+            rb.useGravity = true;
+        }
+    }
+
     void OnTriggerDestruction()
     {
-        Rigidbody rb = GetComponent<Rigidbody>();
         OnDestruction.Invoke();
-        Debug.Log(transform.position);
-        Instantiate(ParticleExplosion, rb.position, rb.rotation);
+        Debug.Log("Exploded: " + transform.position);
+        if (ParticleExplosion != null)
+        {
+            Instantiate(ParticleExplosion, rb.position, rb.rotation);
+        }
+        FindFirstObjectByType<PlayerManager>().OnItemDropped();
         Destroy(gameObject);
     }
 
