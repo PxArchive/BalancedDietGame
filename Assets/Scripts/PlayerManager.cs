@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class PlayerManager : MonoBehaviour
 {
     int numItemsDropped = 0;
-    int numItemsUntilFail;
+    public int numItemsUntilFail = 3;
     public bool alreadyFailed = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
