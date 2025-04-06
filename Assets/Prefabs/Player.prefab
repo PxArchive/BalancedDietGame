@@ -253,6 +253,8 @@ MonoBehaviour:
   horizontalClamp: 0.3
   verticalClamp: 0.4
   verticalCenter: 0.4
+  minShakeStrenght: 5
+  maxShakeStrenght: 7
 --- !u!114 &8659649913084272794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -570,31 +572,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stepSize: 0.5
-  stepTime: 1
+  stepTime: 0.5
+  shakeDelay: 0.5
   curve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0.0025445316
-      value: 0.003144606
-      inSlope: 3.2220397
-      outSlope: 3.2220397
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.035805587
+      outWeight: 0
     - serializedVersion: 3
-      time: 0.9974555
-      value: 1.0062892
-      inSlope: 0.01029863
-      outSlope: 0.01029863
+      time: 1
+      value: 1
+      inSlope: 2.5043828
+      outSlope: 2.5043828
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.61224526
+      inWeight: 0.046666563
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  isWalking: 0
+  OnShake:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8800749287023299499
 GameObject:
   m_ObjectHideFlags: 0

@@ -44,8 +44,8 @@ public class ExplodeOnCollision : MonoBehaviour
         {
             Instantiate(ParticleExplosion, rb.position, rb.rotation);
         }
-        GetComponent<AudioSource>().Play();
-        //Destroy(gameObject);
+        FindFirstObjectByType<PlayerManager>().OnItemDropped();
+        Destroy(gameObject);
     }
 
 }

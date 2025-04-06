@@ -794,6 +794,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stepSize: 0.5
   stepTime: 1
+  shakeDelayFactor: 1
   curve:
     serializedVersion: 2
     m_Curve:
@@ -819,6 +820,9 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   isWalking: 0
+  OnShake:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &549474944
 GameObject:
   m_ObjectHideFlags: 0
@@ -1983,11 +1987,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 802864467512414828, guid: e132ec45f51a67a4da2c703573603137, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.681
+      value: 1.33
       objectReference: {fileID: 0}
     - target: {fileID: 802864467512414828, guid: e132ec45f51a67a4da2c703573603137, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.463
+      value: 0.26
       objectReference: {fileID: 0}
     - target: {fileID: 1186208374060792810, guid: e132ec45f51a67a4da2c703573603137, type: 3}
       propertyPath: m_Mesh
