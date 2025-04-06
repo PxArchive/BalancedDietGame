@@ -26,6 +26,8 @@ public class Foods : MonoBehaviour
 
     public void ResetPosition()
     {
+        foods.RemoveAll(x => x == null);
+
         foreach (GameObject g in foods)
         {
             ResetObjectPosition(g);
