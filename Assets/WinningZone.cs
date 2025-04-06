@@ -9,7 +9,7 @@ public class WinningZone : MonoBehaviour
         if (other.transform.CompareTag("Plate"))
         {
             Debug.Log("YOU WON!");
-            SceneManager.LoadScene("WinMenuScene");
+            SceneManager.LoadScene("WinMenuScene", LoadSceneMode.Additive);
         }
     }
 }
