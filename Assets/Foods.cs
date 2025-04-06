@@ -50,6 +50,9 @@ public class Foods : MonoBehaviour
     public void ResetPosition()
     {
         /*foreach (GameObject g in foods)
+        foods.RemoveAll(x => x == null);
+
+        foreach (GameObject g in foods)
         {
             ResetObjectPosition(g);
             //Rigidbody gRigidBody = g.GetComponent<Rigidbody>();

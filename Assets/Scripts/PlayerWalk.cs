@@ -12,16 +12,18 @@ public class PlayerWalk : MonoBehaviour
     public bool isWalking = false;
 
     public UnityEvent OnShake;
+    private PlayerManager pm;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        pm = FindFirstObjectByType<PlayerManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !isWalking)
+        if (!pm.alreadyFailed && Input.GetKeyDown(KeyCode.Space) && !isWalking)
         {
             //Debug.Log("Step");
             StartCoroutine(WalkCoroutine());
