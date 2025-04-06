@@ -19,6 +19,9 @@ public class InputManager : MonoBehaviour
     [SerializeField] float verticalClamp = 20f;
     [SerializeField] float verticalCenter = .6f;
 
+    [SerializeField] float minShakeStrenght = .2f;
+    [SerializeField] float maxShakeStrenght = .3f;
+
     Vector2 mousePos2D = Vector2.zero;
     PlayerWalk walker;
 
@@ -34,6 +37,8 @@ public class InputManager : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        walker.OnShake.AddListener(AddRandomVelocity);
     }
 
     public void Update()
@@ -88,5 +93,15 @@ public class InputManager : MonoBehaviour
 
         
         plateObject.transform.rotation = Quaternion.Euler(90f, 0f, 0f) * Quaternion.LookRotation(cursorObject.transform.position - plateObject.transform.position, Vector3.up);
+    }
+
+    void AddRandomVelocity()
+    {
+        float angle = Random.Range(0f, 360f);
+        float length = Random.Range(minShakeStrenght, maxShakeStrenght);
+
+        Vector2 direction = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * length;
+
+        prevVelocity += Camera.main.transform.TransformDirection(direction); ;
     }
 }
