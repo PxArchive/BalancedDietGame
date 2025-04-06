@@ -5,6 +5,7 @@ public class PlayerManager : MonoBehaviour
 {
     int numItemsDropped = 0;
     int numItemsUntilFail;
+    public bool alreadyFailed = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -29,6 +30,12 @@ public class PlayerManager : MonoBehaviour
 
     void OnFail()
     {
+        if (alreadyFailed)
+        {
+            return;
+        }
+
+        alreadyFailed = true;
         SceneManager.LoadScene("GameOverScreen", LoadSceneMode.Additive);
     }
 }
