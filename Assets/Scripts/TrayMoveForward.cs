@@ -16,14 +16,17 @@ public class TrayMoveForward : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //rb.MovePosition(playerWalk.transform.position + offset);
+        transform.position = playerWalk.transform.position + offset;
     }
 
     void FixedUpdate()
     {
         Vector3 targetPosition = playerWalk.transform.position + offset;
         float alpha = Mathf.Clamp(20 * Time.deltaTime, 0, 1);
-        rb.MovePosition(Vector3.Lerp(transform.position, targetPosition, alpha));
+        //Debug.Log(alpha);
+        //rb.MovePosition(Vector3.Lerp(transform.position, targetPosition, alpha));
+        //rb.MovePosition(targetPosition);
 
     }
 }
