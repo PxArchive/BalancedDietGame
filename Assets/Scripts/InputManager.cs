@@ -1,6 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class InputManager : MonoBehaviour
 {
@@ -103,5 +104,10 @@ public class InputManager : MonoBehaviour
         Vector2 direction = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * length;
 
         prevVelocity += Camera.main.transform.TransformDirection(direction); ;
+    }
+
+    void OnQuitToMenu()
+    {
+        SceneManager.LoadScene(1);
     }
 }
