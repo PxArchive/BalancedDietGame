@@ -1448,6 +1448,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foods: []
+  numItemsToSpawn: 4
+  spawnZOffset: 1
+  spawnSafetyThreshold: 0.2
 --- !u!1 &763639932
 GameObject:
   m_ObjectHideFlags: 0
@@ -2095,7 +2098,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7646252266286208147, guid: e132ec45f51a67a4da2c703573603137, type: 3}
+    - {fileID: 8900931184090076882, guid: e132ec45f51a67a4da2c703573603137, type: 3}
+    - {fileID: 73360791157704446, guid: e132ec45f51a67a4da2c703573603137, type: 3}
+    - {fileID: 7618692982844460055, guid: e132ec45f51a67a4da2c703573603137, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8800749287023299499, guid: e132ec45f51a67a4da2c703573603137, type: 3}
