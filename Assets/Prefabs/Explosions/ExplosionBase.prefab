@@ -51,7 +51,16 @@ VisualEffect:
   m_ResourceVersion: 1
   m_PropertySheet:
     m_Float:
-      m_Array: []
+      m_Array:
+      - m_Value: 1
+        m_Name: MeshProbability
+        m_Overridden: 1
+      - m_Value: 0.45
+        m_Name: MeshRoughness
+        m_Overridden: 1
+      - m_Value: 1
+        m_Name: SpriteSize
+        m_Overridden: 1
     m_Vector2f:
       m_Array: []
     m_Vector3f:
@@ -69,7 +78,13 @@ VisualEffect:
     m_Gradient:
       m_Array: []
     m_NamedObject:
-      m_Array: []
+      m_Array:
+      - m_Value: {fileID: 5817954866590659473, guid: e3cf6fdf72519b74ba48c68be6514798, type: 3}
+        m_Name: Mesh
+        m_Overridden: 1
+      - m_Value: {fileID: 2800000, guid: 99a442d38f499c743a00b7c10e7b815a, type: 3}
+        m_Name: MeshAlbedo
+        m_Overridden: 1
     m_Bool:
       m_Array: []
 --- !u!73398921 &8267408508987155882
