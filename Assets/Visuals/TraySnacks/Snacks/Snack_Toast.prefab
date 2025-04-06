@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3332076054779358109}
+  - component: {fileID: 8760692487394604908}
+  - component: {fileID: 117327739380427025}
   m_Layer: 0
   m_Name: Snack_Toast
   m_TagString: Untagged
@@ -32,6 +34,49 @@ Transform:
   - {fileID: 5923176192784480517}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &8760692487394604908
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4444533187144340153}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &117327739380427025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4444533187144340153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86d828dbeab57a242a47951ab0c3bf3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ParticleExplosion: {fileID: 6013122784522688299, guid: e85692b1d0552604bbee4ec9d6ff3c14, type: 3}
+  OnDestruction:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5002611871854093168
 GameObject:
   m_ObjectHideFlags: 0
@@ -43,6 +88,7 @@ GameObject:
   - component: {fileID: 5923176192784480517}
   - component: {fileID: 6048533091581220257}
   - component: {fileID: 1717426930469610847}
+  - component: {fileID: 8667314969683747159}
   m_Layer: 0
   m_Name: ngj2025_Toast
   m_TagString: Untagged
@@ -58,7 +104,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5002611871854093168}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -118,3 +164,25 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8667314969683747159
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5002611871854093168}
+  m_Material: {fileID: 13400000, guid: d3bc3f4b0376b1946807131f1a3e77ed, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3562986263409630012, guid: a7be7a49929204b409a8ec752fc24fea, type: 3}
